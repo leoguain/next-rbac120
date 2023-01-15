@@ -5,7 +5,7 @@ import { TopicsProps } from "./types";
 
 export const Topics = ({ topics }: TopicsProps) => {
   return (
-    <Flex mx="auto" my={4} px={[4]} justifyContent="center">
+    <Flex mx="auto" my={16} px={[4]} justifyContent="center">
       <Stack
         spacing={["20px", "20px", "20px", "15px", "20px"]}
         direction={["column", "column", "column", "row", "row"]}

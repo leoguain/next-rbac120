@@ -6,7 +6,7 @@ import { FAQProps } from "./types";
 
 export const FAQ = ({ faq }: FAQProps) => {
   return (
-    <Box bg={"#fff"} mx="auto" my={4} px={[4]}>
+    <Box w="100%" maxWidth={"7xl"} mx="auto" my="16" px={[4]}>
       <Text
         color={"primary.500"}
         fontSize={["xl", "2xl"]}

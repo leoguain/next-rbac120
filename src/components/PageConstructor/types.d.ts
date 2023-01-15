@@ -7,6 +7,9 @@ export type TextProps = {
   type: string;
   text?: string;
   texts?: ListItemProps[];
+  path?: string;
+
+  content?: TextProps[];
 };
 
 export type ListProps = {

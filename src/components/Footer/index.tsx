@@ -1,7 +1,5 @@
 import { Flex, Text, Image, Box, Link, AspectRatio } from "@chakra-ui/react";
 
-import { GetStaticProps } from "next";
-
 import { FaPhoneAlt } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
 
@@ -73,28 +71,9 @@ export const Footer = () => {
       </Box>
       <Box bg="#e5e5e5" w="100%" mx="auto">
         <Text color="primary.500" fontSize={["sm"]} py={4} align="center">
-          © 2022 RBAC 120 – Norma da ANAC | Todos os direitos reservados
+          © 2023 RBAC 120 – Norma da ANAC | Todos os direitos reservados
         </Text>
       </Box>
     </>
   );
 };
-
-export const getStaticProps: GetStaticProps = async () => {
-  const texts = {
-    rbacFooterText: "RBAC 120 – Norma da ANAC",
-    pardiniFooterText:
-      "Site operado pela Toxicologia Pardini, entidade privada sem vínculos formais com a ANAC.",
-    copyrightFooterText:
-      "© 2022 RBAC 120 – Norma da ANAC | Todos os direitos reservados",
-  };
-
-  return {
-    props: {
-      texts,
-    },
-    revalidate: 60 * 60 * 24,
-  };
-};
-
-export default Footer;

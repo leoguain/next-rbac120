@@ -76,7 +76,7 @@ export const getStaticProps: GetStaticProps = async () => {
     },
     {
       id: "list_01",
-      type: "list",
+      type: "iconlist",
       texts: [
         {
           id: "listItem_01",

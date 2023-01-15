@@ -71,7 +71,7 @@ export const getStaticProps: GetStaticProps = async () => {
     },
     {
       id: "list_01",
-      type: "list",
+      type: "iconlist",
       texts: [
         {
           id: "listItem_01",
@@ -136,9 +136,116 @@ export const getStaticProps: GetStaticProps = async () => {
       text: "(a) Este Regulamento se aplica a qualquer pessoa que desempenhe Atividade de Risco à Segurança Operacional na Aviação Civil (ARSO), incluindo:",
     },
     {
+      id: "list_02",
+      type: "list",
+      texts: [
+        {
+          id: "listItem_01",
+          type: "listItem",
+          text: "(1) exploradores de serviços aéreos:",
+        },
+        {
+          id: "listItem_0101",
+          type: "listItem-1",
+          text: "(i) empresas de transporte aéreo;",
+        },
+        {
+          id: "listItem_0102",
+          type: "listItem-1",
+          text: "(ii) serviços aéreos especializados públicos;",
+        },
+        {
+          id: "listItem_02",
+          type: "listItem",
+          text: "(2) detentores de certificado sob o RBHA 145, ou RBAC que venha a substituí-lo;",
+        },
+        {
+          id: "listItem_03",
+          type: "listItem",
+          text: "(3) detentores de certificado sob o RBAC 139;",
+        },
+        {
+          id: "listItem_04",
+          type: "listItem",
+          text: "(4) empresas subcontratadas, direta ou indiretamente, por qualquer dos anteriores para desempenhar ARSO.",
+        },
+      ],
+    },
+    {
       id: "paragraph_05",
       type: "paragraph",
       text: "(b) Para os propósitos deste Regulamento, são consideradas ARSO:",
+    },
+    {
+      id: "list_03",
+      type: "list",
+      texts: [
+        {
+          id: "listItem_01",
+          type: "listItem",
+          text: "(1) qualquer atividade realizada por uma pessoa, exceto passageiro, na área restrita de segurança do aeródromo (ARS);",
+        },
+        {
+          id: "listItem_02",
+          type: "listItem",
+          text: "(2) cálculo das posições de carga, bagagem, passageiros e combustível nas aeronaves;",
+        },
+        {
+          id: "listItem_03",
+          type: "listItem",
+          text: "(3) manutenção, manutenção preventiva e modificações, incluindo reparos e inspeções obrigatórias de qualquer dos seguintes itens:",
+        },
+        {
+          id: "listItem_0301",
+          type: "listItem-1",
+          text: "(i) aeronave;",
+        },
+        {
+          id: "listItem_0302",
+          type: "listItem-1",
+          text: "(ii) produtos aeronáuticos;",
+        },
+        {
+          id: "listItem_0303",
+          type: "listItem-1",
+          text: "(iii) produtos de radionavegação aeronáutica;",
+        },
+        {
+          id: "listItem_0304",
+          type: "listItem-1",
+          text: "(iv) produtos de telecomunicações aeronáuticas.",
+        },
+        {
+          id: "listItem_04",
+          type: "listItem",
+          text: "(4) inspeção e certificação da manutenção de um produto mencionado no parágrafo 120.1(b)(3);",
+        },
+        {
+          id: "listItem_05",
+          type: "listItem",
+          text: "(5) abastecimento e manutenção dos veículos que serão utilizados para o abastecimento das aeronaves na ARS;",
+        },
+        {
+          id: "listItem_06",
+          type: "listItem",
+          text: "(6) atividades realizadas por um agente de segurança do aeródromo ou um operador de raio-x;",
+        },
+        {
+          id: "listItem_07",
+          type: "listItem",
+          text: "(7) atividades realizadas por um membro da tripulação de uma aeronave;",
+        },
+        {
+          id: "listItem_08",
+          type: "listItem",
+          text: "(8) carga e descarga de veículos de transporte de bagagem (trolleys) para carregamento e descarregamento da aeronave e a condução destes veículos;",
+        },
+        {
+          id: "listItem_09",
+          type: "listItem",
+          text: "(9) atividades de prevenção, salvamento e combate a incêndio.",
+        },
+      ],
     },
     {
       id: "paragraph_06",

@@ -6,20 +6,24 @@ import { Box, List, ListItem, ListIcon } from "@chakra-ui/react";
 
 import { ListProps } from "../../types";
 
-export const TextList = ({ list }: ListProps) => {
+export const IconTextList = ({ list }: ListProps) => {
   return (
     <Box>
       <List>
         {list.map(({ id, type, text }) => (
           <React.Fragment key={id}>
             <When value={type === "listItem"}>
-              <ListItem mt={1} pl={5}>
+              <ListItem>
+                <ListIcon as={HiChevronDown} />
                 {text}
               </ListItem>
             </When>
 
             <When value={type === "listItem-1"}>
-              <ListItem pl={10}>{text}</ListItem>
+              <ListItem pl={4}>
+                <ListIcon as={HiChevronRight} />
+                {text}
+              </ListItem>
             </When>
           </React.Fragment>
         ))}

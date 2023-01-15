@@ -9,14 +9,14 @@ export const useTopics = () => {
         imgPath: pathImages + "quem_esta_obrigado_adotar_rbac.jpg",
         imgAlt: "Quem está obrigado a adotar RBAC?",
         text: "A proposta do regulamento não é apenas aumentar a fiscalização e aplicar punições, mas principalmente trabalhar na recuperação e prevenção ao uso de substâncias.",
-        href: "/obrigacao",
+        href: "/obligation",
       },
       {
         id: "Como implantar a norma?",
         imgPath: pathImages + "como_podemos_ajudar_implementar_norma.jpg",
         imgAlt: "Como podemos ajudar a implementar a norma?",
         text: "A intenção da ANAC é acrescentar os pedidos de exames toxicológicos que possam identificar o uso de substâncias psicoativas na contratação e transferência de funcionários.",
-        href: "/implantacao",
+        href: "/implantation",
       },
       {
         id: "Saiba mais sobre a Toxicologia Pardini",

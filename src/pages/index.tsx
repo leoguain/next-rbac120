@@ -39,15 +39,7 @@ export default function Home() {
       </Head>
 
       <Page title="Home" description="Principal">
-        <Box
-          bg={"#fff"}
-          w="100%"
-          h="auto"
-          maxWidth={"7xl"}
-          mx="auto"
-          my={4}
-          px={[4]}
-        >
+        <Box bg={"#fff"} w="100%" h="auto">
           <Flex bg="secondary.500" gap={[0, 2, 4]} justifyContent="center">
             <Flex
               w="100%"
@@ -69,7 +61,7 @@ export default function Home() {
 
               <Text
                 color="#fff"
-                fontSize={["md", "md", "xl", "3xl"]}
+                fontSize={["xl", "xl", "xl", "3xl"]}
                 align={["center", "center", "left"]}
                 my={2}
                 mx={4}
@@ -79,14 +71,7 @@ export default function Home() {
             </Flex>
           </Flex>
 
-          <Box
-            w="100%"
-            h="auto"
-            maxWidth={"7xl"}
-            mx="auto"
-            my={4}
-            px={[0, 0, 4]}
-          >
+          <Box w="100%" h="auto" maxWidth={"7xl"} mx="auto" my={4} px={[4]}>
             <Text color={"primary.500"} fontSize={["xl", "2xl"]} my={4}>
               Programa de prevenção do uso indevido de substâncias psicoativas
             </Text>
@@ -121,7 +106,7 @@ export default function Home() {
             px={[4]}
             flexDirection={["column", "column", "column", "column", "row"]}
           >
-            <Box bg="purple" mx={"auto"} my={"auto"}>
+            <Box bg="purple" m={"auto"}>
               <iframe
                 width="640"
                 height="360"
@@ -131,7 +116,7 @@ export default function Home() {
               />
             </Box>
 
-            <Box mx="auto" px={[0, 0, 4]}>
+            <Box mx="auto" pl={[0, 0, 4]}>
               <Text color={"#000"} fontSize={["md"]} textAlign="justify" my={3}>
                 Realizamos o programa necessário para implantação das normas
                 exigidas pela RBAC 120.
