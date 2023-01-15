@@ -1,5 +1,8 @@
 export type BreadcrumbProps = {
-  breadcrumbItems: Array<BreadcrumbItemProps>;
+  //breadcrumbItems: Array<BreadcrumbItemProps>;
+  url: string;
+  oldSeparator: string;
+  newSeparator: string;
 };
 
 export type BreadcrumbItemProps = {

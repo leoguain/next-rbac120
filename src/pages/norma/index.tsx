@@ -5,11 +5,12 @@ import { useRouter } from "next/router";
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
 
 import { Box } from "@chakra-ui/react";
+
 import { Page } from "src/components/Page";
 import { PageTitle } from "src/components/PageTitle";
-import { ContactForm } from "src/components/ContactForm";
+import { PageConstructor } from "src/components/PageConstructor";
 
-const Contact = ({
+const Norma = ({
   pageTitle,
   description,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -18,7 +19,7 @@ const Contact = ({
   return (
     <>
       <Head>
-        <title>Fale conosco - RBAC120</title>
+        <title>Quem somos - RBAC120</title>
         <meta name={pageTitle} content={description} />
       </Head>
 
@@ -33,7 +34,6 @@ const Contact = ({
           px={[4]}
         >
           <PageTitle pageTitle={pageTitle} pageUrl={asPath} />
-          <ContactForm />
         </Box>
       </Page>
     </>
@@ -41,7 +41,7 @@ const Contact = ({
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const pageTitle = "Fale conosco";
+  const pageTitle = "Norma";
   const description = "";
 
   return {
@@ -53,4 +53,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default Contact;
+export default Norma;

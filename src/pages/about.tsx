@@ -1,17 +1,21 @@
 import Head from "next/head";
 import React from "react";
+import { useRouter } from "next/router";
+
 import { Page } from "src/components/Page";
+import { PageTitle } from "src/components/PageTitle";
+import { PageConstructor } from "src/components/PageConstructor";
 
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
 
-import { PageConstructor } from "src/components/PageConstructor";
-
-import { Text, Box, Link, Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 const About = ({
   pageTitle,
   texts,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const { asPath } = useRouter();
+
   return (
     <>
       <Head>
@@ -29,21 +33,7 @@ const About = ({
           my={4}
           px={[4]}
         >
-          <Flex
-            borderBottom="2px solid"
-            borderColor="gray.200"
-            alignItems={"center"}
-            justifyContent={["center", "center", "space-between"]}
-            flexDirection={["column-reverse", "column-reverse", "row"]}
-          >
-            <Text color={"primary.500"} fontSize={["xl", "2xl"]} my={4}>
-              {pageTitle}
-            </Text>
-            <Text color={"gray.400"} alignSelf="flex-end" fontSize={"sm"}>
-              <Link href="/">Início</Link> / {pageTitle}
-            </Text>
-          </Flex>
-
+          <PageTitle pageTitle={pageTitle} pageUrl={asPath} />
           <PageConstructor text={texts} />
         </Box>
       </Page>

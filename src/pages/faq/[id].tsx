@@ -1,15 +1,23 @@
 import Head from "next/head";
-import { Page } from "src/components/Page";
+import { useRouter } from "next/router";
+
 import type {
   InferGetStaticPropsType,
   GetStaticProps,
   GetStaticPaths,
 } from "next";
+
+import { Box } from "@chakra-ui/react";
+
+import { Page } from "src/components/Page";
+import { PageTitle } from "src/components/PageTitle";
 import { PageConstructor } from "src/components/PageConstructor";
 
 const Question = ({
   texts,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const { asPath } = useRouter();
+
   console.log({ texts });
 
   // <PageConstructor text={texts.content} />
@@ -22,11 +30,23 @@ const Question = ({
       </Head>
 
       <Page title={texts.title} description="Teste1">
-        <div>
-          <h1>Olá</h1>
-          <h1>{texts.id}</h1>
-          <h1>{texts.title}</h1>
-        </div>
+        <Box
+          bg={"#fff"}
+          w="100%"
+          h="auto"
+          maxWidth={"7xl"}
+          mx="auto"
+          my={4}
+          px={[4]}
+        >
+          <PageTitle pageTitle="Teste" pageUrl={asPath} />
+
+          <div>
+            <h1>Olá</h1>
+            <h1>{texts.id}</h1>
+            <h1>{texts.title}</h1>
+          </div>
+        </Box>
       </Page>
     </>
   );

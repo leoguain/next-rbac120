@@ -3,36 +3,34 @@ import { Flex, Link } from "@chakra-ui/react";
 import { BreadcrumbItem } from "./BreadCrumbItem";
 import { BreadcrumbProps } from "./types";
 
-export const Breadcrumb = ({ breadcrumbItems }: BreadcrumbProps) => {
-  const separator = "/";
-  const urlTeste = "http://localhost:3000/faq/qual-a-definicao-de-arso";
-  const homeUrl = "http://localhost:3000/";
-  const pages = urlTeste.replace(homeUrl, "").split(separator);
+export const Breadcrumb = ({
+  url,
+  oldSeparator,
+  newSeparator,
+}: BreadcrumbProps) => {
+  const urlSeparator = "/";
+  const breadcrumbSeparator = " >";
+  const pages = url.replaceAll(oldSeparator, newSeparator).split(urlSeparator);
 
-  let urlX = homeUrl;
+  let urlFlex = "http://localhost:3000/";
+
+  console.log(url);
 
   return (
-    <Flex
-      mx={[2]}
-      flexFlow={["row wrap"]}
-      columnGap={2}
-      align="center"
-      justifyContent={["center", "center", "center", "end"]}
-    >
-      <>
-        <Link href={urlX} color="gray.400">
-          Home /
-        </Link>
-        {pages.map((page, index) => (
-          <>
-            {!!(urlX = urlX.concat(page.toString() + "/"))}
-            <Link color="gray.400" key={index} href={urlX}>
-              {page}
-              {pages.length - 1 === index ? "" : "/"}
-            </Link>
-          </>
-        ))}
-      </>
+    <Flex mx={[2]} flexFlow={["row wrap"]} columnGap={2} align={"end"}>
+      <Link href={urlFlex} key={0} color="gray.400">
+        Home
+      </Link>
+
+      {pages.map((page, index) => (
+        <>
+          {!!(urlFlex = urlFlex.concat(page.toString() + urlSeparator))}
+          <Link color="gray.400" key={index + 1} href={urlFlex}>
+            {page.charAt(0).toUpperCase() + page.slice(1)}
+            {pages.length - 1 === index ? "" : breadcrumbSeparator}
+          </Link>
+        </>
+      ))}
     </Flex>
   );
 };

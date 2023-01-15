@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import { Page } from "src/components/Page";
 
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
