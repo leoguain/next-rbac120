@@ -8,7 +8,11 @@ import { GrMail } from "react-icons/gr";
 export const TopBar = () => {
   return (
     <Flex
-      as="main"
+      bg={"#fff"}
+      top="0"
+      left="0"
+      right="0"
+      zIndex="5"
       w="100%"
       maxWidth={"7xl"}
       mx="auto"
@@ -18,6 +22,7 @@ export const TopBar = () => {
       borderBottom="2px solid"
       borderColor="gray.200"
       gap={[0, 2, 4]}
+      opacity="0.6"
     >
       <Flex alignItems="center" gap={2}>
         <FaPhoneAlt />

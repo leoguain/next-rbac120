@@ -1,9 +1,11 @@
 import { Flex, Text, Image, Box } from "@chakra-ui/react";
-import { ClientsProps } from "./types";
+import { useClients } from "./hooks/useClients";
 
-export const Clients = ({ clients }: ClientsProps) => {
+export const Clients = () => {
+  const { clients } = useClients();
+
   return (
-    <Box w="100%" maxWidth={"7xl"} mx="auto" my="16" mb="24" px={[4]}>
+    <Box w="100%" maxWidth={"7xl"} mx="auto" mb={12} px={[4]}>
       <Text
         color={"primary.500"}
         fontSize={["xl", "2xl"]}

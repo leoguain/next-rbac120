@@ -1,3 +1,4 @@
+import React from "react";
 import { Flex, Link } from "@chakra-ui/react";
 
 import { BreadcrumbItem } from "./BreadCrumbItem";
@@ -14,8 +15,6 @@ export const Breadcrumb = ({
 
   let urlFlex = "http://localhost:3000/";
 
-  console.log(url);
-
   return (
     <Flex mx={[2]} flexFlow={["row wrap"]} columnGap={2} align={"end"}>
       <Link href={urlFlex} key={0} color="gray.400">
@@ -23,13 +22,13 @@ export const Breadcrumb = ({
       </Link>
 
       {pages.map((page, index) => (
-        <>
+        <React.Fragment key={index}>
           {!!(urlFlex = urlFlex.concat(page.toString() + urlSeparator))}
           <Link color="gray.400" key={index + 1} href={urlFlex}>
             {page.charAt(0).toUpperCase() + page.slice(1)}
             {pages.length - 1 === index ? "" : breadcrumbSeparator}
           </Link>
-        </>
+        </React.Fragment>
       ))}
     </Flex>
   );

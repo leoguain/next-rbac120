@@ -4,16 +4,20 @@ import { useRouter } from "next/router";
 
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
 
-import { Box } from "@chakra-ui/react";
 import { Page } from "src/components/Page";
+import { Content } from "src/components/Content";
 import { PageTitle } from "src/components/PageTitle";
 import { ContactForm } from "src/components/ContactForm";
+
+import GetUrlTitle from "src/components/Breadcrumb/GetUrlTitle";
 
 const Contact = ({
   pageTitle,
   description,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { asPath } = useRouter();
+
+  //GetUrlTitle(asPath);
 
   return (
     <>
@@ -23,18 +27,10 @@ const Contact = ({
       </Head>
 
       <Page title={pageTitle} description={description}>
-        <Box
-          bg={"#fff"}
-          w="100%"
-          h="auto"
-          maxWidth={"7xl"}
-          mx="auto"
-          my={4}
-          px={[4]}
-        >
+        <Content>
           <PageTitle pageTitle={pageTitle} pageUrl={asPath} />
           <ContactForm />
-        </Box>
+        </Content>
       </Page>
     </>
   );

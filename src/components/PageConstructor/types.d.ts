@@ -21,3 +21,24 @@ export type ListItemProps = {
   type: string;
   text: string;
 };
+
+export type ColumnsProps = {
+  columns: ColumnProps[];
+};
+
+export type ColumnProps = {
+  id: string;
+  type: string;
+  texts: TextProps[];
+};
+
+export type LinkBoxProps = {
+  links: LinkProps[];
+};
+
+export type LinkProps = {
+  id: string;
+  type: string;
+  text: string;
+  path: string;
+};

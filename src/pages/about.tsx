@@ -3,12 +3,11 @@ import React from "react";
 import { useRouter } from "next/router";
 
 import { Page } from "src/components/Page";
+import { Content } from "src/components/Content";
 import { PageTitle } from "src/components/PageTitle";
 import { PageConstructor } from "src/components/PageConstructor";
 
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
-
-import { Box } from "@chakra-ui/react";
 
 const About = ({
   pageTitle,
@@ -24,18 +23,10 @@ const About = ({
       </Head>
 
       <Page title={pageTitle} description="Teste1">
-        <Box
-          bg={"#fff"}
-          w="100%"
-          h="auto"
-          maxWidth={"7xl"}
-          mx="auto"
-          my={4}
-          px={[4]}
-        >
+        <Content>
           <PageTitle pageTitle={pageTitle} pageUrl={asPath} />
           <PageConstructor text={texts} />
-        </Box>
+        </Content>
       </Page>
     </>
   );

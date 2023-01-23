@@ -6,6 +6,7 @@ export type BreadcrumbProps = {
 };
 
 export type BreadcrumbItemProps = {
+  id: number;
   url: string;
   name: string;
   index?: number;

@@ -4,15 +4,15 @@ import { useRouter } from "next/router";
 
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
 
-import { Box } from "@chakra-ui/react";
-
 import { Page } from "src/components/Page";
+import { Content } from "src/components/Content";
 import { PageTitle } from "src/components/PageTitle";
 import { PageConstructor } from "src/components/PageConstructor";
 
 const Norma = ({
   pageTitle,
   description,
+  texts,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { asPath } = useRouter();
 
@@ -24,17 +24,10 @@ const Norma = ({
       </Head>
 
       <Page title={pageTitle} description={description}>
-        <Box
-          bg={"#fff"}
-          w="100%"
-          h="auto"
-          maxWidth={"7xl"}
-          mx="auto"
-          my={4}
-          px={[4]}
-        >
+        <Content>
           <PageTitle pageTitle={pageTitle} pageUrl={asPath} />
-        </Box>
+          <PageConstructor text={texts} />
+        </Content>
       </Page>
     </>
   );
@@ -43,11 +36,38 @@ const Norma = ({
 export const getStaticProps: GetStaticProps = async () => {
   const pageTitle = "Norma";
   const description = "";
+  const texts = [
+    {
+      id: "linkbox_01",
+      type: "linkbox",
+      texts: [
+        {
+          id: "link_01",
+          type: "link",
+          text: "Norma ANAC RBAC 120 explicada",
+          path: "/norma/explanation",
+        },
+        {
+          id: "link_02",
+          type: "link",
+          text: "Quem está obrigado a adotar a RBAC?",
+          path: "/norma/obligation",
+        },
+        {
+          id: "link_03",
+          type: "link",
+          text: "Como implantar a norma RBAC?",
+          path: "/norma/implantacao",
+        },
+      ],
+    },
+  ];
 
   return {
     props: {
       pageTitle,
       description,
+      texts,
     },
     revalidate: 60 * 60 * 24, // 24 hours
   };

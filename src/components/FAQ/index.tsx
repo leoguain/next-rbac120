@@ -2,16 +2,16 @@ import { Text, Box } from "@chakra-ui/react";
 import React from "react";
 
 import NextLink from "next/link";
-import { FAQProps } from "./types";
+import { useFAQ } from "src/components/FAQ/hooks/useFAQ";
 
-export const FAQ = ({ faq }: FAQProps) => {
+export const FAQ = () => {
+  const { faq } = useFAQ();
+
   return (
     <Box w="100%" maxWidth={"7xl"} mx="auto" my="16" px={[4]}>
       <Text
         color={"primary.500"}
         fontSize={["xl", "2xl"]}
-        mt={16}
-        mb={6}
         align={["center", "center", "center", "start"]}
       >
         FAQ

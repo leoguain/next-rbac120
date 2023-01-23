@@ -59,6 +59,11 @@ export const useBreadCrumbItem = () => {
         url: "/fale-conosco",
         title: "Fale conosco",
       },
+      {
+        id: 12,
+        url: "/contact",
+        title: "Fale conosco",
+      },
     ],
     []
   );

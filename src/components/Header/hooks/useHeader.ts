@@ -20,15 +20,15 @@ export const useHeader = () => {
         subItems: [
           {
             id: "Norma ANAC RBAC 120 explicada",
-            href: "/explanation",
+            href: "/norma/explanation",
           },
           {
             id: "Quem está obrigado a adotar a RBAC?",
-            href: "/obligation",
+            href: "/norma/obligation",
           },
           {
             id: "Como implantar a norma RBAC?",
-            href: "/implantacao",
+            href: "/norma/implantacao",
           },
         ],
       },
