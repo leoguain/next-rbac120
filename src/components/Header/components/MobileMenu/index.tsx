@@ -44,7 +44,7 @@ export const MobileMenu = ({ items }: MenuProps) => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton bg="secondary.500" color="#fff" />
-          <DrawerHeader />
+          <DrawerHeader mb={4} />
           <DrawerBody display="flex" flexDir="column">
             <Accordion allowMultiple>
               {items.map(({ id, href, subItems }) => (

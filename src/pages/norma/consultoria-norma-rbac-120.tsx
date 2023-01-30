@@ -49,13 +49,35 @@ export const getStaticProps: GetStaticProps = async () => {
       texts: [
         {
           id: "listItem_01",
-          type: "listItem",
-          text: "E-learning: O Sistema de aprendizagem à distância que possibilita o treinamento eficaz de acordo com as necessidades da empresa seja ela de qualquer tamanho;",
+          type: "cParagraph",
+          texts: [
+            {
+              id: "text_01",
+              type: "paragraphN",
+              text: "E-learning: ",
+            },
+            {
+              id: "text_02",
+              type: "paragraph",
+              text: "O Sistema de aprendizagem à distância que possibilita o treinamento eficaz de acordo com as necessidades da empresa seja ela de qualquer tamanho;",
+            },
+          ],
         },
         {
           id: "listItem_02",
-          type: "listItem",
-          text: "Tutor online: Plantão especializado disponível para apoiar o funcionário ARSO, nos casos de necessidade.",
+          type: "cParagraph",
+          texts: [
+            {
+              id: "text_01",
+              type: "paragraphN",
+              text: "Tutor online: ",
+            },
+            {
+              id: "text_02",
+              type: "paragraph",
+              text: "Plantão especializado disponível para apoiar o funcionário ARSO, nos casos de necessidade.",
+            },
+          ],
         },
       ],
     },
@@ -331,13 +353,35 @@ export const getStaticProps: GetStaticProps = async () => {
       texts: [
         {
           id: "listItem_01",
-          type: "listItem",
-          text: "Exames Toxicológicos de Queratina: realizados a partir da análise de cabelos ou pelos, tem a vantagem de serem muito eficazes em decorrência de sua grande janela de detecção (até 180 dias) e sua segurança. Adicionalmente a coleta é fácil e rápida e a logística é simplificada. Muito recomendados para os ETSP prévios;",
+          type: "cParagraph",
+          texts: [
+            {
+              id: "text_01",
+              type: "paragraphN",
+              text: "Exames Toxicológicos de Queratina: ",
+            },
+            {
+              id: "text_02",
+              type: "paragraph",
+              text: "realizados a partir da análise de cabelos ou pelos, tem a vantagem de serem muito eficazes em decorrência de sua grande janela de detecção (até 180 dias) e sua segurança. Adicionalmente a coleta é fácil e rápida e a logística é simplificada. Muito recomendados para os ETSP prévios;",
+            },
+          ],
         },
         {
           id: "listItem_02",
-          type: "listItem",
-          text: "Exames Toxicológicos de Urina: com uma janela de detecção de 2 a 5 dias, sua eficiência é restrita, mas seu custo é menor.",
+          type: "cParagraph",
+          texts: [
+            {
+              id: "text_01",
+              type: "paragraphN",
+              text: "Exames Toxicológicos de Urina: ",
+            },
+            {
+              id: "text_02",
+              type: "paragraph",
+              text: "com uma janela de detecção de 2 a 5 dias, sua eficiência é restrita, mas seu custo é menor.",
+            },
+          ],
         },
       ],
     },

@@ -11,7 +11,7 @@ export const useHeader = () => {
     () => [
       {
         id: "Quem somos",
-        href: "/about",
+        href: "/quem-somos",
         subItems: [],
       },
       {
@@ -20,15 +20,15 @@ export const useHeader = () => {
         subItems: [
           {
             id: "Norma ANAC RBAC 120 explicada",
-            href: "/norma/explanation",
+            href: "/norma/rbac-120-explicado",
           },
           {
             id: "Quem está obrigado a adotar a RBAC?",
-            href: "/norma/obligation",
+            href: "/norma/empresas-obrigadas-a-adocao-da-rbac",
           },
           {
             id: "Como implantar a norma RBAC?",
-            href: "/norma/implantacao",
+            href: "/norma/consultoria-norma-rbac-120",
           },
         ],
       },
@@ -39,7 +39,7 @@ export const useHeader = () => {
       },
       {
         id: "Fale conosco",
-        href: "/contact",
+        href: "/fale-conosco",
         subItems: [],
       },
     ],

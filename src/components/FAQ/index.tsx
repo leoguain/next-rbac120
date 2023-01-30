@@ -8,12 +8,8 @@ export const FAQ = () => {
   const { faq } = useFAQ();
 
   return (
-    <Box w="100%" maxWidth={"7xl"} mx="auto" my="16" px={[4]}>
-      <Text
-        color={"primary.500"}
-        fontSize={["xl", "2xl"]}
-        align={["center", "center", "center", "start"]}
-      >
+    <Box bg={"#fff"} w="100%" maxWidth={"7xl"} mx="auto" my="16" px={[4]}>
+      <Text color={"primary.500"} fontSize={["xl", "2xl"]} align={["start"]}>
         FAQ
       </Text>
       <Box>
@@ -22,9 +18,11 @@ export const FAQ = () => {
             <NextLink href={href}>
               <Text
                 color={"primary.500"}
-                fontSize={["xl"]}
+                fontSize={["lg"]}
                 _hover={{ color: "secondary.500" }}
-                align={["center", "center", "center", "start"]}
+                align={["start"]}
+                borderBottom="2px solid"
+                borderColor="gray.100"
               >
                 {id}
               </Text>

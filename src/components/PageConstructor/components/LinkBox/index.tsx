@@ -6,12 +6,12 @@ import { LinkBoxProps } from "../../types";
 
 export const LinkBox = ({ links }: LinkBoxProps) => {
   return (
-    <Flex alignItems={["center", "center", "start"]} flexDirection={"column"}>
+    <Flex alignItems={["start"]} flexDirection={"column"}>
       {links.map(({ id, text, path }) => (
         <React.Fragment key={id}>
           <Link
             color="primary.500"
-            fontSize={"xl"}
+            fontSize={"lg"}
             fontWeight="normal"
             href={path}
           >

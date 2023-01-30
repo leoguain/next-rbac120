@@ -19,11 +19,6 @@ const Question = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { asPath } = useRouter();
 
-  console.log({ texts });
-  console.log({ title });
-
-  // <PageConstructor text={texts} />
-
   return (
     <React.Fragment>
       <Head>
@@ -66,34 +61,90 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           type: "paragraph",
           text: "Esse programa determina a aplicação de exames toxicológicos em momentos distintos:",
         },
+
         {
           id: "list_01",
           type: "iconlist",
           texts: [
             {
               id: "listItem_01",
-              type: "listItem",
-              text: "ETSP prévio: A ser aplicado antes da contratação ou designação para atividades de risco; Para esse caso é recomendável a adoção de exames toxicológicos de cabelo pela sua grande janela de detecção e eficiência nos processos admissionais;",
+              type: "cParagraph",
+              texts: [
+                {
+                  id: "text_01",
+                  type: "paragraphN",
+                  text: "ETSP prévio: ",
+                },
+                {
+                  id: "text_02",
+                  type: "paragraph",
+                  text: "A ser aplicado antes da contratação ou designação para atividades de risco; Para esse caso é recomendável a adoção de exames toxicológicos de cabelo pela sua grande janela de detecção e eficiência nos processos admissionais;",
+                },
+              ],
             },
             {
               id: "listItem_02",
-              type: "listItem",
-              text: "ETSP aleatórios: A serem aplicados randomicamente, com número definido pela norma;",
+              type: "cParagraph",
+              texts: [
+                {
+                  id: "text_01",
+                  type: "paragraphN",
+                  text: "ETSP aleatórios: ",
+                },
+                {
+                  id: "text_02",
+                  type: "paragraph",
+                  text: "A serem aplicados randomicamente, com número definido pela norma;",
+                },
+              ],
             },
             {
               id: "listItem_03",
-              type: "listItem",
-              text: "ETSP pós acidente: Para verificação do consumo de substâncias psicoativas após situações anormais;",
+              type: "cParagraph",
+              texts: [
+                {
+                  id: "text_01",
+                  type: "paragraphN",
+                  text: "ETSP pós acidente: ",
+                },
+                {
+                  id: "text_02",
+                  type: "paragraph",
+                  text: "Para verificação do consumo de substâncias psicoativas após situações anormais;",
+                },
+              ],
             },
             {
               id: "listItem_04",
-              type: "listItem",
-              text: "ETSP de suspeita: A ser aplicado no caso de suspeita do abuso de substâncias psicoativas pelo Supervisor treinado;",
+              type: "cParagraph",
+              texts: [
+                {
+                  id: "text_01",
+                  type: "paragraphN",
+                  text: "ETSP de suspeita: ",
+                },
+                {
+                  id: "text_02",
+                  type: "paragraph",
+                  text: "A ser aplicado no caso de suspeita do abuso de substâncias psicoativas pelo Supervisor treinado;",
+                },
+              ],
             },
             {
               id: "listItem_05",
-              type: "listItem",
-              text: "ETSP de retorno ou acompanhamento: Usado para acompanhamento e reinserção de ARSO vindos de evento impeditivo.",
+              type: "cParagraph",
+              texts: [
+                {
+                  id: "text_01",
+                  type: "paragraphN",
+                  text: "ETSP de retorno ou acompanhamento: ",
+                },
+                {
+                  id: "text_02",
+                  type: "paragraph",
+                  text: "Usado para acompanhamento e reinserção de ARSO vindos de evento impeditivo.",
+                },
+              ],
             },
           ],
         },
@@ -117,7 +168,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           id: "link_0201",
           type: "link",
           text: "Consulte-nos em caso de dúvidas.",
-          path: "/contact",
+          path: "/fale-conosco",
         },
       ],
     },
@@ -136,37 +187,37 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           texts: [
             {
               id: "listItem_01",
-              type: "listItem",
+              type: "paragraphN",
               text: "JUNHO / 2012:",
             },
             {
               id: "listItem_0101",
-              type: "listItem-1",
+              type: "paragraph-1",
               text: "Programa de Prevenção ao Abuso de Substâncias Psicoativas formalizado junto à ANAC;",
             },
             {
               id: "listItem_0102",
-              type: "listItem-1",
+              type: "paragraph-1",
               text: "Educação e treinamento dos funcionários envolvidos com áreas de risco (ARSO).",
             },
             {
               id: "listItem_02",
-              type: "listItem",
+              type: "paragraphN",
               text: "JUNHO / 2013:",
             },
             {
               id: "listItem_0201",
-              type: "listItem-1",
+              type: "paragraph-1",
               text: "Prazo limite para o início dos exames toxicológicos admissionais;",
             },
             {
               id: "listItem_0202",
-              type: "listItem-1",
+              type: "paragraph-1",
               text: "Prazo limite para o início dos exames toxicológicos por amostragem;",
             },
             {
               id: "listItem_0203",
-              type: "listItem-1",
+              type: "paragraph-1",
               text: "Os exames toxicológicos devem atender às normas técnicas exigidas pela ANAC.",
             },
           ],
@@ -178,15 +229,26 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       title: "Onde encontro a norma oficial?",
       texts: [
         {
-          id: "paragraph_05",
-          type: "paragraph",
-          text: "A norma RBAC 120 na integra está disponível na página da ANAC. ",
-        },
-        {
-          id: "link_0401",
-          type: "linkEx",
-          text: "Veja a norma RBAC 120.",
-          path: "https://www.anac.gov.br/assuntos/legislacao/legislacao-1/boletim-de-pessoal/2011/21s1/rbac-120",
+          id: "cParagraph_01",
+          type: "cParagraph",
+          texts: [
+            {
+              id: "text_01",
+              type: "paragraph",
+              text: "A norma RBAC 120 na integra está disponível na página da ANAC. Veja a ",
+            },
+            {
+              id: "text_02",
+              type: "linkEx",
+              text: " norma RBAC 120",
+              path: "https://www.anac.gov.br/assuntos/legislacao/legislacao-1/boletim-de-pessoal/2011/21s1/rbac-120",
+            },
+            {
+              id: "text_03",
+              type: "paragraph",
+              text: ".",
+            },
+          ],
         },
       ],
     },

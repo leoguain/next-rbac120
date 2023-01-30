@@ -22,17 +22,16 @@ export const TopBar = () => {
       borderBottom="2px solid"
       borderColor="gray.200"
       gap={[0, 2, 4]}
-      opacity="0.6"
     >
-      <Flex alignItems="center" gap={2}>
+      <Flex alignItems="center" gap={2} color="primary.500">
         <FaPhoneAlt />
-        <Link color="primary.500" passHref href="tel:1130035411">
+        <Link passHref href="tel:1130035411">
           <Text as="span" color="primary.500" fontSize="sm">
             11 3003-5411
           </Text>
         </Link>
       </Flex>
-      <Flex alignItems="center" gap={2}>
+      <Flex alignItems="center" gap={2} color="primary.500">
         <GrMail />
         <Link passHref href="mailto:email@rbac120.com.br">
           <Text as="span" color="primary.500" fontSize="sm">

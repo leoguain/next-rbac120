@@ -9,15 +9,11 @@ import { Content } from "src/components/Content";
 import { PageTitle } from "src/components/PageTitle";
 import { ContactForm } from "src/components/ContactForm";
 
-import GetUrlTitle from "src/components/Breadcrumb/GetUrlTitle";
-
 const Contact = ({
   pageTitle,
   description,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { asPath } = useRouter();
-
-  //GetUrlTitle(asPath);
 
   return (
     <>
@@ -45,7 +41,7 @@ export const getStaticProps: GetStaticProps = async () => {
       pageTitle,
       description,
     },
-    revalidate: 60 * 60 * 24, // 24 hours
+    revalidate: 60 * 60 * 24,
   };
 };
 

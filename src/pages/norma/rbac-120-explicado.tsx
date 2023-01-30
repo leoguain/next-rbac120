@@ -198,7 +198,7 @@ export const getStaticProps: GetStaticProps = async () => {
       id: "link_01",
       type: "link",
       text: "Consulte-nos em caso de dúvidas.",
-      path: "/contact",
+      path: "/fale-conosco",
     },
     {
       id: "subtitle_06",

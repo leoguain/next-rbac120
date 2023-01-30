@@ -13,13 +13,14 @@ export type TextProps = {
 };
 
 export type ListProps = {
-  list: ListItemProps[];
+  list: CPsProps[];
 };
 
 export type ListItemProps = {
   id: string;
   type: string;
-  text: string;
+  text?: string;
+  texts?: ParagraphProps[];
 };
 
 export type ColumnsProps = {
@@ -41,4 +42,33 @@ export type LinkProps = {
   type: string;
   text: string;
   path: string;
+};
+
+export type AccordionProps = {
+  items: AccordionItemProps[];
+};
+
+export type AccordionItemProps = {
+  id: string;
+  type: string;
+  text: string;
+  content: TextProps[];
+};
+
+export type CPsProps = {
+  id: string;
+  type: string;
+  text?: string;
+  texts: ParagraphProps[];
+};
+
+export type CPProps = {
+  paragraphs: ParagraphProps[];
+};
+
+export type ParagraphProps = {
+  id: string;
+  type: string;
+  text?: string;
+  path?: string;
 };

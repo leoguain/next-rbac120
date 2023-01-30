@@ -7,7 +7,6 @@ import { Banner } from "src/components/Banner";
 import { Content } from "src/components/Content";
 import { PageConstructor } from "src/components/PageConstructor";
 
-import { Topics } from "src/components/Topics";
 import { FAQ } from "src/components/FAQ";
 import { Clients } from "src/components/Clients";
 
@@ -38,7 +37,6 @@ function Home({
     </>
   );
 }
-//<Topics />
 
 export const getStaticProps: GetStaticProps = async () => {
   const pageTitle = "Home";
@@ -56,8 +54,24 @@ export const getStaticProps: GetStaticProps = async () => {
     },
     {
       id: "paragraph_01",
-      type: "paragraph",
-      text: "De acordo com o RBAC120, todos os funcionários ARSO ou que venham a ser admitidos para funções ARSO deverão – obrigatoriamente – passar por treinamento e programa educativo. Nosso sistema de aprendizagem à distância, e-Learning, atende as exigências e apresenta soluções completas com excelente relação custo x benefício.",
+      type: "cParagraph",
+      texts: [
+        {
+          id: "text_01",
+          type: "paragraph",
+          text: "De acordo com o RBAC120, ",
+        },
+        {
+          id: "text_02",
+          type: "paragraphN",
+          text: "todos os funcionários ARSO  ",
+        },
+        {
+          id: "text_03",
+          type: "paragraph",
+          text: " ou que venham a ser admitidos para funções ARSO deverão – obrigatoriamente – passar por treinamento e programa educativo. Nosso sistema de aprendizagem à distância, e-Learning, atende as exigências e apresenta soluções completas com excelente relação custo x benefício.",
+        },
+      ],
     },
     {
       id: "paragraph_02",
@@ -116,7 +130,7 @@ export const getStaticProps: GetStaticProps = async () => {
               id: "link_01",
               type: "link",
               text: "Saiba mais sobre nossa consultoria de implantação da norma.",
-              path: "/norma/implantacao",
+              path: "/norma/consultoria-norma-rbac-120",
             },
           ],
         },
@@ -151,7 +165,7 @@ export const getStaticProps: GetStaticProps = async () => {
               id: "button_01",
               type: "button",
               text: "SAIBA MAIS",
-              path: "/norma/obligation",
+              path: "/norma/empresas-obrigadas-a-adocao-da-rbac",
             },
           ],
         },
@@ -179,7 +193,7 @@ export const getStaticProps: GetStaticProps = async () => {
               id: "button_02",
               type: "button",
               text: "SAIBA MAIS",
-              path: "/norma/implantacao",
+              path: "/norma/consultoria-norma-rbac-120",
             },
           ],
         },
@@ -207,7 +221,7 @@ export const getStaticProps: GetStaticProps = async () => {
               id: "button_03",
               type: "button",
               text: "SAIBA MAIS",
-              path: "/about",
+              path: "/quem-somos",
             },
           ],
         },
@@ -221,7 +235,7 @@ export const getStaticProps: GetStaticProps = async () => {
       description,
       texts,
     },
-    revalidate: 60 * 60 * 24, // 24 hours
+    revalidate: 60 * 60 * 24,
   };
 };
 

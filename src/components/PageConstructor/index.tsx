@@ -3,19 +3,13 @@ import NextLink from "next/link";
 
 import { When } from "../../components/shared/When";
 
-import {
-  Box,
-  Text,
-  Image,
-  Link,
-  AspectRatio,
-  Button,
-  FlexProps,
-} from "@chakra-ui/react";
+import { Box, Text, Image, Link, AspectRatio, Button } from "@chakra-ui/react";
 
 import { TextsProps } from "./types";
 
+import { AccordionMenu } from "./components/Accordion";
 import { Columns } from "./components/Columns";
+import { CompoundParagraph } from "./components/CompoundParagraph";
 import { LinkBox } from "./components/LinkBox";
 import { IconTextList } from "./components/IconTextList";
 import { TextList } from "./components/TextList";
@@ -26,6 +20,10 @@ export const PageConstructor = ({ text }: TextsProps) => {
       {text.map(({ id, type, text, texts, path }) => (
         <React.Fragment key={id}>
           {/*- TEXTOS -----------------------------------------------*/}
+          <When value={type === "cParagraph"}>
+            <CompoundParagraph paragraphs={texts} />
+          </When>
+
           <When value={type === "link"}>
             <Link color="secondary.500" fontWeight="normal" href={path}>
               {text}
@@ -86,6 +84,10 @@ export const PageConstructor = ({ text }: TextsProps) => {
           </When>
 
           {/*- COMPONENTES --------------------------------------------*/}
+          <When value={type === "accordion"}>
+            <AccordionMenu items={texts} />
+          </When>
+
           <When value={type === "button"}>
             <Button
               as={NextLink}

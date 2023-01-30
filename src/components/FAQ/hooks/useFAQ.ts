@@ -5,19 +5,19 @@ export const useFAQ = () => {
     () => [
       {
         id: "Quando aplicar exames toxicológicos?",
-        href: "#faqWhen",
+        href: "/faq/quando-aplicar-exames-toxicologicos",
       },
       {
         id: "Qual a definição de ARSO?",
-        href: "#faqARSO",
+        href: "/faq/qual-a-definicao-de-arso/",
       },
       {
         id: "Quais são as datas limites para implantação?",
-        href: "#faqDates",
+        href: "/faq/quais-sao-as-datas-limites-para-implantacao",
       },
       {
         id: "Onde encontro a norma oficial?",
-        href: "#faqStandard",
+        href: "faq/onde-encontro-a-norma-oficial",
       },
     ],
     []

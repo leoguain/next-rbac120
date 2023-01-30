@@ -1,8 +1,7 @@
 import React from "react";
-import { HiChevronRight, HiChevronDown } from "react-icons/hi";
 import { When } from "../../../../components/shared/When";
 
-import { Box, List, ListItem, ListIcon } from "@chakra-ui/react";
+import { Box, List, ListItem } from "@chakra-ui/react";
 
 import { ListProps } from "../../types";
 
