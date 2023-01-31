@@ -1,5 +1,12 @@
 import { extendTheme, ThemeOverride } from "@chakra-ui/react";
 import { lighten, darken } from "polished";
+import { Lato } from "@next/font/google";
+
+const lato = Lato({
+  weight: ["300", "400", "700"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+});
 
 const colorPrimary = "#06325d";
 const colorSecondary = "#f7921e";
@@ -8,8 +15,8 @@ export const config: ThemeOverride = {
   initialColorMode: "light",
   useSystemColorMode: false,
   fonts: {
-    heading: "Lato",
-    body: "Lato",
+    heading: lato.style.fontFamily,
+    body: lato.style.fontFamily,
   },
   styles: {
     global: {

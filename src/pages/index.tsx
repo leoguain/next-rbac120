@@ -1,3 +1,4 @@
+import React from "react";
 import Head from "next/head";
 
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
@@ -18,9 +19,9 @@ function Home({
   texts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <>
+    <React.Fragment>
       <Head>
-        <title>RBAC120 - Norma da ANAC</title>
+        <title>{pageTitle}</title>
         <meta name={pageTitle} content={description} />
       </Head>
 
@@ -34,13 +35,13 @@ function Home({
           </Content>
         </Box>
       </Page>
-    </>
+    </React.Fragment>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const pageTitle = "Home";
-  const description = "Principal";
+  const pageTitle = "RBAC 120 - Norma da ANAC";
+  const description = "Principal.";
   const texts = [
     {
       id: "subTitle_01",

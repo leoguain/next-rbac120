@@ -11,31 +11,33 @@ import { PageConstructor } from "src/components/PageConstructor";
 
 const Norma = ({
   pageTitle,
+  title,
   description,
   texts,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { asPath } = useRouter();
 
   return (
-    <>
+    <React.Fragment>
       <Head>
-        <title>Quem somos - RBAC120</title>
+        <title>{pageTitle}</title>
         <meta name={pageTitle} content={description} />
       </Head>
 
       <Page title={pageTitle} description={description}>
         <Content>
-          <PageTitle pageTitle={pageTitle} pageUrl={asPath} />
+          <PageTitle pageTitle={title} pageUrl={asPath} />
           <PageConstructor text={texts} />
         </Content>
       </Page>
-    </>
+    </React.Fragment>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const pageTitle = "Norma";
-  const description = "";
+  const pageTitle = "Norma - RBAC 120";
+  const title = "Norma";
+  const description = "Saiba mais sobre a Norma RBAC 120.";
   const texts = [
     {
       id: "linkbox_01",
@@ -66,10 +68,11 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       pageTitle,
+      title,
       description,
       texts,
     },
-    revalidate: 60 * 60 * 24, // 24 hours
+    revalidate: 60 * 60 * 24,
   };
 };
 

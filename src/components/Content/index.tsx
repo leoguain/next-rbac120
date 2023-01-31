@@ -11,7 +11,7 @@ export const Content = ({ children, ...rest }: FlexProps) => {
       direction="column"
       {...rest}
     >
-      <>{children}</>
+      <React.Fragment>{children}</React.Fragment>
     </Flex>
   );
 };

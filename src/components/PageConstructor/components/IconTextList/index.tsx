@@ -68,34 +68,3 @@ export const IconTextList = ({ list }: ListProps) => {
     </Box>
   );
 };
-
-/*
-
- <When value={type === "paragraph"}>
-              <ListItem>
-                <ListIcon as={HiChevronRight} />
-                {text}
-              </ListItem>
-            </When>
-
-            <When value={type === "paragraph-1"}>
-              <ListItem pl={4}>
-                <ListIcon as={HiChevronRight} />
-                {text}
-              </ListItem>
-            </When>
-
-            <When value={type === "listItem"}>
-              <ListItem>
-                <ListIcon as={HiChevronRight} />
-                {text}
-              </ListItem>
-            </When>
-
-            <When value={type === "listItem-1"}>
-              <ListItem pl={4}>
-                <ListIcon as={HiChevronRight} />
-                {text}
-              </ListItem>
-            </When>
-            */

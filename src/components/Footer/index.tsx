@@ -1,3 +1,4 @@
+import React from "react";
 import { Flex, Box } from "@chakra-ui/react";
 
 import { Card } from "../Card";
@@ -7,10 +8,10 @@ import { Pardini } from "../Pardini";
 
 export const Footer = () => {
   return (
-    <>
-      <Box mx="auto" my={4} px={[4]}>
+    <React.Fragment>
+      <Box bg={"#fff"} mx="auto" my={4} px={[4]} w="100%" maxWidth={"7xl"}>
         <Flex
-          justifyContent="space-around"
+          justifyContent="space-between"
           flexDirection={["column", "column", "row"]}
           gap={7}
           align="center"
@@ -21,6 +22,6 @@ export const Footer = () => {
         <Pardini />
       </Box>
       <BottomBar />
-    </>
+    </React.Fragment>
   );
 };

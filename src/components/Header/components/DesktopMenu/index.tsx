@@ -12,8 +12,6 @@ import { DesktopSubMenu } from "../DesktopSubMenu";
 export const DesktopMenu = ({ items }: MenuProps) => {
   const { asPath } = useRouter();
 
-  //menuId={id} menuHref={href}
-
   return (
     <Flex alignItems="center" justifyContent="space-between" gap={16}>
       <HStack fontSize={["sm", "md"]} gap={[2, 4]}>

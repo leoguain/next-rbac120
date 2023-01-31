@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import NextLink from "next/link";
+
 import {
   Link,
   Button,
@@ -9,7 +10,6 @@ import {
   MenuList,
   MenuItem,
   useDisclosure,
-  background,
 } from "@chakra-ui/react";
 
 import { HiChevronDown } from "react-icons/hi";

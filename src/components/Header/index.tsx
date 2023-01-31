@@ -1,5 +1,5 @@
-import { FaPhoneAlt } from "react-icons/fa";
-import { GrMail } from "react-icons/gr";
+import React from "react";
+import { Flex } from "@chakra-ui/react";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -11,16 +11,11 @@ import { TopBar } from "./components/Topbar";
 import { MobileMenu } from "./components/MobileMenu";
 import { DesktopMenu } from "./components/DesktopMenu";
 
-import { Flex } from "@chakra-ui/react";
-import React from "react";
-
 export const Header = () => {
   const { menuItems, isMobile } = useHeader();
 
-  //opacity={"0.8"}
-
   return (
-    <>
+    <React.Fragment>
       <TopBar />
       <Flex
         position="sticky"
@@ -31,7 +26,7 @@ export const Header = () => {
         bg={"#fff"}
         w="100%"
         mx="auto"
-        px={[4, 6, 6, 6, 12]}
+        px={[4, 6, 6, 6, 14]}
         py={6}
         gap={[0, 2, 8]}
         justifyContent={["space-between", "space-between", "start"]}
@@ -52,6 +47,6 @@ export const Header = () => {
           </When>
         </Flex>
       </Flex>
-    </>
+    </React.Fragment>
   );
 };

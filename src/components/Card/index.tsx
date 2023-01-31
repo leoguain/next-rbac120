@@ -1,3 +1,4 @@
+import React from "react";
 import { Flex, Text, Image, Box, Link, AspectRatio } from "@chakra-ui/react";
 
 import { FaPhoneAlt } from "react-icons/fa";
@@ -5,7 +6,7 @@ import { GrMail } from "react-icons/gr";
 
 export const Card = () => {
   return (
-    <>
+    <React.Fragment>
       <Box>
         <AspectRatio maxW="213px" ratio={3.55 / 1}>
           <Image src="/rbac_120.png" alt="Logo RBAC" />
@@ -31,6 +32,6 @@ export const Card = () => {
           </Link>
         </Flex>
       </Box>
-    </>
+    </React.Fragment>
   );
 };

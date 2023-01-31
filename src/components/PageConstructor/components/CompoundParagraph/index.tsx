@@ -6,7 +6,7 @@ import { CPProps } from "../../types";
 
 export const CompoundParagraph = ({ paragraphs }: CPProps) => {
   return (
-    <>
+    <React.Fragment>
       {paragraphs.map(({ id, type, text, path }) => (
         <React.Fragment key={id}>
           <When value={type === "paragraph"}>
@@ -51,30 +51,6 @@ export const CompoundParagraph = ({ paragraphs }: CPProps) => {
           </When>
         </React.Fragment>
       ))}
-    </>
+    </React.Fragment>
   );
 };
-
-/*
-
-let compoundParagraph = "";
-
-  paragraphs.map(({ id, type, text }) => (
-    <React.Fragment key={id}>
-      {!!(compoundParagraph = compoundParagraph + text)}
-
-      <When value={type === "paragraphN"}>
-        <span>{text}</span>
-      </When>
-    </React.Fragment>
-  ));
-
-  console.log(compoundParagraph);
-
-  return (
-    <Text color={"#000"} fontSize={["md"]} textAlign="justify" my={4}>
-      {compoundParagraph}
-    </Text>
-  );
-
-  */

@@ -11,34 +11,37 @@ import { ContactForm } from "src/components/ContactForm";
 
 const Contact = ({
   pageTitle,
+  title,
   description,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { asPath } = useRouter();
 
   return (
-    <>
+    <React.Fragment>
       <Head>
-        <title>Fale conosco - RBAC120</title>
+        <title>{pageTitle}</title>
         <meta name={pageTitle} content={description} />
       </Head>
 
       <Page title={pageTitle} description={description}>
         <Content>
-          <PageTitle pageTitle={pageTitle} pageUrl={asPath} />
+          <PageTitle pageTitle={title} pageUrl={asPath} />
           <ContactForm />
         </Content>
       </Page>
-    </>
+    </React.Fragment>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const pageTitle = "Fale conosco";
-  const description = "";
+  const pageTitle = "Fale conosco - RBAC 120";
+  const title = "Fale conosco";
+  const description = "Fale conosco.";
 
   return {
     props: {
       pageTitle,
+      title,
       description,
     },
     revalidate: 60 * 60 * 24,
