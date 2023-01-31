@@ -1,25 +1,19 @@
 import React from "react";
-import { useRouter } from "next/router";
 
 import { Flex, Link } from "@chakra-ui/react";
 
 import { BreadcrumbProps } from "./types";
 
-export const Breadcrumb = ({
-  url,
-  oldSeparator,
-  newSeparator,
-}: BreadcrumbProps) => {
-  const { asPath } = useRouter();
+export const Breadcrumb = ({ url, title }: BreadcrumbProps) => {
   const urlSeparator = "/";
   const breadcrumbSeparator = " >";
-  const pages = url.replaceAll(oldSeparator, newSeparator).split(urlSeparator);
+  const pages = url.split(urlSeparator);
 
-  let urlFlex = "http://localhost:3000/";
+  let urlFlex = "";
 
   return (
-    <Flex mx={[2]} flexFlow={["row wrap"]} columnGap={2} align={"end"}>
-      <Link href={urlFlex} key={0} color="gray.500">
+    <Flex mx={[2]} flexFlow={["row wrap"]} columnGap={2} align={"center"}>
+      <Link href={"/"} key={0} color="gray.500">
         Início
       </Link>
 
@@ -27,8 +21,10 @@ export const Breadcrumb = ({
         <React.Fragment key={index}>
           {!!(urlFlex = urlFlex.concat(page.toString() + urlSeparator))}
           <Link color="gray.500" key={index + 1} href={urlFlex}>
-            {page.charAt(0).toUpperCase() + page.slice(1)}
-            {pages.length - 1 === index ? "" : breadcrumbSeparator}
+            {pages.length - 1 === index
+              ? ""
+              : page.charAt(0).toUpperCase() + page.slice(1)}
+            {pages.length - 1 === index ? title : breadcrumbSeparator}
           </Link>
         </React.Fragment>
       ))}

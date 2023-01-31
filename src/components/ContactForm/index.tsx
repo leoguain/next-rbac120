@@ -1,11 +1,16 @@
-import React from "react";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 
-import { FormControl, Box, Button, Input, Textarea } from "@chakra-ui/react";
-
-import { useState } from "react";
+import {
+  FormControl,
+  Box,
+  Button,
+  Input,
+  Textarea,
+  useToast,
+  Spinner,
+} from "@chakra-ui/react";
 
 type Inputs = {
   name: string;
@@ -20,12 +25,11 @@ export const ContactForm = () => {
     handleSubmit,
     reset,
     watch,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<Inputs>();
 
+  const toast = useToast();
   const form: React.RefObject<HTMLFormElement> = useRef(null);
-
-  //const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   const onSubmit: SubmitHandler<Inputs> = () =>
     emailjs
@@ -38,11 +42,25 @@ export const ContactForm = () => {
       .then(
         (result) => {
           console.log(result.text);
-          alert("Mensagem enviada com sucesso");
+          toast({
+            title: "Mensagem enviada.",
+            description: "Sua mensagem foi enviada com sucesso.",
+            status: "success",
+            duration: 9000,
+            isClosable: true,
+          });
+
           reset();
         },
         (error) => {
-          alert("Houve um erro ao enviar sua mensagem. Tente novamente.");
+          toast({
+            title: "Erro ao enviar mensagem.",
+            description:
+              "Houve um problema ao enviar sua mensagem. Tente novamente.",
+            status: "error",
+            duration: 9000,
+            isClosable: true,
+          });
           console.log(error.text);
         }
       );
@@ -100,6 +118,7 @@ export const ContactForm = () => {
           />
         </FormControl>
         <Button
+          disabled={isSubmitting}
           type="submit"
           bg="primary.500"
           _hover={{ bg: "secondary.500" }}
@@ -111,6 +130,14 @@ export const ContactForm = () => {
         >
           ENVIAR
         </Button>
+        {isSubmitting && (
+          <Spinner
+            ml={4}
+            color="secondary.500"
+            thickness="4px"
+            visibility="visible"
+          />
+        )}
       </form>
     </Box>
   );
